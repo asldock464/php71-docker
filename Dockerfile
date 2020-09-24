@@ -1,8 +1,6 @@
 FROM php:7.2-apache
 MAINTAINER James Wade <jpswade@gmail.com>
 
-RUN docker-php-ext-configure mcrypt
-
 # Install gd, iconv, mbstring, mcrypt, mysql, soap, sockets, zip, and zlib extensions
 # see example at https://hub.docker.com/_/php/
 RUN apt-get update \
@@ -14,14 +12,13 @@ RUN apt-get update \
         libfreetype6-dev \
         libgd-dev \
         libjpeg62-turbo-dev \
-        libmcrypt-dev \
         libpng-dev \
         libxml2-dev \
         zlib1g-dev \
         netcat \
         wget \
         sudo \
-    && docker-php-ext-install iconv mbstring mysqli mcrypt soap sockets zip \
+    && docker-php-ext-install iconv mbstring mysqli soap sockets zip \
     && docker-php-ext-configure gd --enable-gd-native-ttf --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd \
     && docker-php-ext-install pdo_mysql \
