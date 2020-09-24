@@ -1,7 +1,6 @@
 FROM php:7.2-apache
 MAINTAINER James Wade <jpswade@gmail.com>
 
-RUN apt install libmcrypt-dev
 RUN docker-php-ext-configure mcrypt
 
 # Install gd, iconv, mbstring, mcrypt, mysql, soap, sockets, zip, and zlib extensions
