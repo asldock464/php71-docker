@@ -8,6 +8,7 @@ RUN apt-get update \
         git \
         yarn \
         build-essential \
+        libzip-dev \
         libbz2-dev \
         libfreetype6-dev \
         libgd-dev \
